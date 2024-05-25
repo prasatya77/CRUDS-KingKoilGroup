@@ -15,6 +15,7 @@ class TblBarang extends Model
 
     use SoftDeletes;
 
+    // REVIEW Define Param Value for Search Model
     public static function defineParamFilter(){
         $collectFilterNameVariable = array(
             'collectSelect',
@@ -82,12 +83,14 @@ class TblBarang extends Model
         try{
             DB::beginTransaction();
 
+        // REVIEW Insert
             $insertId = self::insertGetId($params);
             if(empty($insertId)){
                 DB::rollBack();
                 return ApiHelper::buildFuncRes(false, 403, 'Data Barang Failed Insert');
             }
 
+        // REVIEW Get Data
             $collectBarang = self::where('id_barang', $insertId)->get()->toArray();
 
             // REVIEW Check Data Result
@@ -134,9 +137,11 @@ class TblBarang extends Model
         try{
             DB::beginTransaction();
 
+        // REVIEW Update
             self::where('id_barang',$idBarang)
                 ->update($params);
 
+        // REVIEW Get Data
             $collectBarang = self::where('id_barang', $idBarang)->get()->toArray();
 
             // REVIEW Check Data Result
@@ -163,6 +168,7 @@ class TblBarang extends Model
         try{
             DB::beginTransaction();
 
+        // REVIEW Delete use Soft Delete
             self::where('id_barang',$idBarang)
                 ->update(['deleted_at' => date("Y-m-d H:i:s")]);
 

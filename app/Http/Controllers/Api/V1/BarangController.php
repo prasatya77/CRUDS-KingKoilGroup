@@ -15,6 +15,7 @@ class BarangController extends Controller{
     protected $accessToken;
     protected $accessIp;
 
+    // NOTE Define Request to Var Global
     public function __construct(Request $request){
         $this->request     = $request;
         $this->accessToken = $request->header('Authorization');
@@ -162,6 +163,7 @@ class BarangController extends Controller{
               return ApiHelper::buildErrRes(false,412,implode(' ',$errors),$errors);
           }
 
+        // REVIEW Validation searchBarangPrice. Because typePrice Must Have Value if searchBarangPrice have Value
           if($this->request->input('searchBarangPrice')){
             if(empty($this->request->input('typePrice'))){
                 return ApiHelper::buildErrRes(false, 403, "Type Price Can Not Empty If searchBarangPrice Have Value");
