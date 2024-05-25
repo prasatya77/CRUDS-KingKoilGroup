@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/soal-1', function () {
+    return view('soal-1');
+});
+
+Route::get('/soal-2', function () {
+    return view('soal-2');
+});
+
+Route::get('/soal-3', function () {
+    return view('soal-3');
+});
