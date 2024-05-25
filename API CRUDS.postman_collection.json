@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "168c4496-69c7-4dbd-a6f5-d591ea4dd0ac",
+		"name": "API CRUDS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "9124234"
+	},
+	"item": [
+		{
+			"name": "Barang",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "5701d8ef69b37f1a3210eed1df3b5ba0f6b0a30a"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"namaBarang\": \"Asus\",\n    \"hargaBarang\": 22222\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/v1/barang/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Read",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "5701d8ef69b37f1a3210eed1df3b5ba0f6b0a30a"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idBarang\" : 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/v1/barang/read"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "5701d8ef69b37f1a3210eed1df3b5ba0f6b0a30a"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idBarang\" : 1,\n    \"namaBarang\": \"Macbook Pro M1\",\n    \"hargaBarang\": 999999999\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/v1/barang/update"
+					},
+					"response": []
+				},
+				{
+					"name": "SoftDelete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "5701d8ef69b37f1a3210eed1df3b5ba0f6b0a30a"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idBarang\" : 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/v1/barang/softDelete"
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "5701d8ef69b37f1a3210eed1df3b5ba0f6b0a30a"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"searchIdBarang\" : null,\n    \"searchBarangName\" : null,\n    \"searchBarangPrice\" : 1,\n    \"typePrice\" : \"EQUAL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/v1/barang/search"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

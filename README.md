@@ -5,12 +5,15 @@
 - Laravel 9.29.0
 - PHP 8.2.11
 - Mysql 8.0.34
+- Composer version 2.6.5
 
 ## ENV
 
 Value Env and param value in File **.env.example** Because this tes code
 
 ## Database Name : db_cruds
+
+## Collection Postman API, name File : API CRUDS.postman_collection.json
 
 ## License
 
